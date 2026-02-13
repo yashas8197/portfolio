@@ -93,10 +93,6 @@ const Footer = () => {
             </svg>
           </a>
         </div>
-
-        <div className="text-xs text-center text-gray-400">
-          © 2025 Yashas. Built with Next.js and Tailwind CSS
-        </div>
       </div>
     </footer>
   );
