@@ -6,11 +6,11 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="flex min-h-screen flex-col items-center justify-center px-6"
+      className="flex min-h-screen flex-col items-center justify-start md:justify-center px-6 pt-28 md:pt-0"
     >
       <div className="max-w-4xl mx-auto text-center space-y-8">
         {/* Static top text */}
-        <div className="text-xs md:text-sm font-semibold tracking-widest uppercase h-5 md:h-6 flex items-center justify-center bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <div className="text-xs md:text-sm font-semibold tracking-widest uppercase flex items-center justify-center bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
           This portfolio is built for fast skimming. Click what interests you.
         </div>
 
