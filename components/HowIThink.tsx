@@ -1,149 +1,78 @@
-import React from "react";
+import AnimateOnScroll from "./AnimateOnScroll";
 
 const HowIThink = () => {
-  const values = [
+  const points = [
     {
-      title: "What I Care About",
-      icon: "🎯",
-      items: [
-        "Business problems over code problems",
-        "Systems that scale with human operations",
-        "Reliability as a core feature",
-        "Architectural clarity for team velocity",
-      ],
+      num: "01",
+      title: "Business First",
+      desc: "I focus on real problems before writing code. Every technical decision maps to a business outcome.",
     },
     {
-      title: "What I Value",
-      icon: "⭐",
-      items: [
-        "Predictable behavior over 'clever' code",
-        "Operational stability",
-        "Iterative shipping & feedback loops",
-        "Documentation as a force multiplier",
-      ],
+      num: "02",
+      title: "Performance is a Feature",
+      desc: "I optimize queries, reduce waste, and measure impact. Speed isn't a nice-to-have — it's the product.",
+    },
+    {
+      num: "03",
+      title: "Simple Systems Scale",
+      desc: "I prefer predictable code over clever abstractions. The best architecture is the one you can reason about.",
     },
   ];
 
+  const stack = ["TypeScript", "React", "Node.js", "PostgreSQL", "Redis"];
+
   return (
-    /* CHANGE: bg-white text-slate-900 → bg-white (text color inherited), add border-t border-slate-100 */
-    <section className="py-24 bg-white border-t border-slate-100">
+    <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
-        {/* CHANGE: mb-12 → mb-16 for consistency, text-slate-500 → text-slate-600 */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-slate-100 pb-8">
-          <div>
-            {/* CHANGE: font-extrabold → font-bold */}
+        <AnimateOnScroll>
+          <div className="mb-14">
             <h2 className="text-4xl font-bold tracking-tight text-slate-900 mb-4">
               How I Think
             </h2>
-            {/* CHANGE: text-slate-500 → text-slate-600, max-w-md → max-w-2xl */}
-            <p className="text-lg text-slate-600 max-w-2xl">
-              My philosophy on building resilient products and scalable
-              engineering cultures.
+            <p className="text-lg text-slate-500 max-w-2xl">
+              My approach to building scalable and reliable products.
             </p>
           </div>
-          <div className="hidden md:block text-right">
-            <span className="text-xs font-mono text-slate-400 uppercase tracking-widest">
-              Philosophy // 01
+        </AnimateOnScroll>
+
+        {/* Principles grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {points.map((point, i) => (
+            <AnimateOnScroll key={i} delay={i * 0.1}>
+              <div className="group bg-slate-50 rounded-2xl p-7 border border-slate-100 hover:border-slate-200 hover:shadow-md transition-all duration-300 h-full">
+                <span className="text-xs font-bold text-blue-600 tracking-wider mb-4 block">
+                  {point.num}
+                </span>
+                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  {point.title}
+                </h3>
+                <p className="text-sm text-slate-500 leading-relaxed">
+                  {point.desc}
+                </p>
+              </div>
+            </AnimateOnScroll>
+          ))}
+        </div>
+
+        {/* Go-to stack */}
+        <AnimateOnScroll delay={0.2}>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <span className="text-sm font-semibold text-slate-900 uppercase tracking-wide shrink-0">
+              Go-To Stack
             </span>
-          </div>
-        </div>
-
-        {/* Grid Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Main Stack Card - Spans 7 columns */}
-          {/* CHANGE: rounded-3xl → rounded-2xl */}
-          <div className="lg:col-span-7 bg-slate-50 rounded-2xl p-8 border border-slate-100 flex flex-col justify-between">
-            <div>
-              {/* CHANGE: rounded-2xl → rounded-xl for consistency */}
-              <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl mb-6">
-                🛠️
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                The Go-To Stack
-              </h3>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {["TypeScript", "Node.js", "PostgreSQL", "Redis", "Next.js"].map(
-                  (tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold"
-                    >
-                      {tech}
-                    </span>
-                  ),
-                )}
-              </div>
-              <p className="text-slate-600 leading-relaxed mb-6">
-  I start by understanding{" "}
-  <span className="text-slate-900 font-semibold">
-    the actual business problem
-  </span>
-  , not just what needs to be built.
-  <br />
-  <br />
-  Most of my work is done with{" "}
-  <span className="text-slate-900 font-semibold">
-    React, Node.js, and PostgreSQL
-  </span>
-  , because they let me move fast without losing control over data or system
-  performance.
-  <br />
-  <br />
-  I try to keep things{" "}
-  <span className="text-slate-900 font-semibold">
-    simple and predictable
-  </span>
-  . I avoid clever abstractions early and focus on code that’s easy to read,
-  debug, and extend when requirements change.
-  <br />
-  <br />
-  When making trade-offs, I lean toward{" "}
-  <span className="text-slate-900 font-semibold">
-    scalability and user experience
-  </span>{" "}solid performance, clean UI, and systems that don’t slow teams down over
-  time.
-</p>
-
-
-
+            <div className="h-px bg-slate-200 hidden sm:block w-12" />
+            <div className="flex flex-wrap gap-2">
+              {stack.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-4 py-1.5 text-sm bg-white border border-slate-200 rounded-full text-slate-600 font-medium hover:border-blue-300 hover:text-blue-600 transition-colors cursor-default"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
-
-            {/* CHANGE: rounded-2xl → rounded-xl */}
-            <div className="bg-slate-900 rounded-xl p-5 text-slate-300 text-sm italic border-l-4 border-blue-500">
-  "Business-first thinking, simple systems, and code that scales with the team."
-</div>
-
-
           </div>
-
-          {/* Values & Care Cards - Spans 5 columns */}
-          <div className="lg:col-span-5 grid grid-cols-1 gap-6">
-            {values.map((group, idx) => (
-              /* CHANGE: rounded-3xl → rounded-2xl */
-              <div
-                key={idx}
-                className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="text-2xl">{group.icon}</span>
-                  <h3 className="text-xl font-bold">{group.title}</h3>
-                </div>
-                <ul className="space-y-4">
-                  {group.items.map((item, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-3 text-slate-600 text-sm"
-                    >
-                      <span className="text-blue-500 mt-1">▹</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );
