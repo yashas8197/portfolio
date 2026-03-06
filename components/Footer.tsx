@@ -44,12 +44,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-slate-50 border-t border-slate-200 py-12">
+    <footer className="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Left: Brand */}
           <div className="text-center md:text-left">
-            <Link href="/" className="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">
+            <Link href="/" className="text-lg font-bold text-slate-900 dark:text-white hover:text-blue-600 transition-colors">
               Yashas
             </Link>
             <p className="text-sm text-slate-400 mt-1">
@@ -59,16 +59,16 @@ const Footer = () => {
 
           {/* Center: Quick links */}
           <div className="flex gap-8">
-            <Link href="/about" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
+            <Link href="/about" className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
               About
             </Link>
-            <Link href="/#products" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
+            <Link href="/#products" className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
               Products
             </Link>
-            <Link href="/#blog" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
+            <Link href="/#blog" className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
               Blog
             </Link>
-            <Link href="/learning" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
+            <Link href="/learning" className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
               Learning
             </Link>
           </div>
@@ -82,7 +82,7 @@ const Footer = () => {
                 aria-label={social.name}
                 target={social.name !== "Email" ? "_blank" : undefined}
                 rel={social.name !== "Email" ? "noopener noreferrer" : undefined}
-                className="p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-200 rounded-lg transition-all duration-200"
+                className="p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg transition-all duration-200"
               >
                 {social.icon}
               </a>

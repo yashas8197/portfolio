@@ -11,10 +11,10 @@ interface ProductSimple {
 
 const ProductCardSimple = ({ product }: { product: ProductSimple }) => {
   return (
-    <div className="group bg-white rounded-2xl border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+    <div className="group bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
       <div className="flex flex-col md:flex-row">
         {/* Image thumbnail */}
-        <div className="relative w-full md:w-[380px] flex-shrink-0 overflow-hidden bg-slate-100">
+        <div className="relative w-full md:w-[380px] flex-shrink-0 overflow-hidden bg-slate-100 dark:bg-slate-700">
           <img
             src={product.image.src}
             alt={product.name}
@@ -26,11 +26,11 @@ const ProductCardSimple = ({ product }: { product: ProductSimple }) => {
         {/* Content */}
         <div className="flex-1 p-7 flex flex-col justify-between">
           <div>
-            <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-3">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors mb-3">
               {product.name}
             </h3>
 
-            <p className="text-sm text-slate-500 leading-relaxed mb-5">
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-5">
               {product.description}
             </p>
 
@@ -38,13 +38,13 @@ const ProductCardSimple = ({ product }: { product: ProductSimple }) => {
               {product.tech.slice(0, 5).map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-1 bg-slate-100 text-slate-600 rounded-lg text-xs font-medium"
+                  className="px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-lg text-xs font-medium"
                 >
                   {tech}
                 </span>
               ))}
               {product.tech.length > 5 && (
-                <span className="px-2.5 py-1 bg-slate-100 text-slate-400 rounded-lg text-xs font-medium">
+                <span className="px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 rounded-lg text-xs font-medium">
                   +{product.tech.length - 5}
                 </span>
               )}
@@ -56,7 +56,7 @@ const ProductCardSimple = ({ product }: { product: ProductSimple }) => {
               href={product.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors"
+              className="flex items-center gap-1.5 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

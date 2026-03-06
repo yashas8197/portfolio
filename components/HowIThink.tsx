@@ -22,14 +22,14 @@ const HowIThink = () => {
   const stack = ["TypeScript", "React", "Node.js", "PostgreSQL", "Redis"];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto px-6">
         <AnimateOnScroll>
           <div className="mb-14">
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 mb-4">
+            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
               How I Think
             </h2>
-            <p className="text-lg text-slate-500 max-w-2xl">
+            <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl">
               My approach to building scalable and reliable products.
             </p>
           </div>
@@ -39,14 +39,14 @@ const HowIThink = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {points.map((point, i) => (
             <AnimateOnScroll key={i} delay={i * 0.1}>
-              <div className="group bg-slate-50 rounded-2xl p-7 border border-slate-100 hover:border-slate-200 hover:shadow-md transition-all duration-300 h-full">
+              <div className="group bg-slate-50 dark:bg-slate-800 rounded-2xl p-7 border border-slate-100 dark:border-slate-700 hover:border-slate-200 dark:hover:border-slate-600 hover:shadow-md transition-all duration-300 h-full">
                 <span className="text-xs font-bold text-blue-600 tracking-wider mb-4 block">
                   {point.num}
                 </span>
-                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
                   {point.title}
                 </h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                   {point.desc}
                 </p>
               </div>
@@ -57,15 +57,15 @@ const HowIThink = () => {
         {/* Go-to stack */}
         <AnimateOnScroll delay={0.2}>
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-            <span className="text-sm font-semibold text-slate-900 uppercase tracking-wide shrink-0">
+            <span className="text-sm font-semibold text-slate-900 dark:text-white uppercase tracking-wide shrink-0">
               Go-To Stack
             </span>
-            <div className="h-px bg-slate-200 hidden sm:block w-12" />
+            <div className="h-px bg-slate-200 dark:bg-slate-700 hidden sm:block w-12" />
             <div className="flex flex-wrap gap-2">
               {stack.map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-1.5 text-sm bg-white border border-slate-200 rounded-full text-slate-600 font-medium hover:border-blue-300 hover:text-blue-600 transition-colors cursor-default"
+                  className="px-4 py-1.5 text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-slate-600 dark:text-slate-300 font-medium hover:border-blue-300 dark:hover:border-blue-500 hover:text-blue-600 transition-colors cursor-default"
                 >
                   {tech}
                 </span>

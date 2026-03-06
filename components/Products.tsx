@@ -129,16 +129,16 @@ const Products = ({
   ];
 
   return (
-    <section id="products" className="py-24 bg-slate-50/50">
+    <section id="products" className="py-24 bg-slate-50/50 dark:bg-slate-900/50">
       <div className="max-w-6xl mx-auto px-6">
         <AnimateOnScroll>
           <div className="mb-14">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-4">
               <div>
-                <h2 className="text-4xl font-bold tracking-tight text-slate-900 mb-4">
+                <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
                   Products
                 </h2>
-                <p className="text-lg text-slate-500 max-w-2xl">
+                <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl">
                   Building solutions that create tangible business value.
                 </p>
               </div>
@@ -155,7 +155,7 @@ const Products = ({
                 </Link>
               )}
             </div>
-            <div className="h-px bg-slate-200" />
+            <div className="h-px bg-slate-200 dark:bg-slate-700" />
           </div>
         </AnimateOnScroll>
 

@@ -4,7 +4,7 @@ const Connect = () => {
   return (
     <section
       id="connect"
-      className="py-24 bg-slate-900 relative overflow-hidden"
+      className="py-24 bg-slate-900 dark:bg-slate-950 relative overflow-hidden"
     >
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10" />

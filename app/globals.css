@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
@@ -17,6 +19,11 @@
   --foreground: #0f172a;
 }
 
+.dark {
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -31,6 +38,11 @@ body {
 ::selection {
   background: #dbeafe;
   color: #1e40af;
+}
+
+.dark ::selection {
+  background: #1e3a5f;
+  color: #93c5fd;
 }
 
 /* Scroll-triggered animations */
@@ -80,6 +92,12 @@ body {
 
 .animated-gradient {
   background: linear-gradient(135deg, #eff6ff, #f5f3ff, #fdf2f8, #eff6ff);
+  background-size: 300% 300%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.dark .animated-gradient {
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #1a0a2e, #0f172a);
   background-size: 300% 300%;
   animation: gradient-shift 8s ease infinite;
 }

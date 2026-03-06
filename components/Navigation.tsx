@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +56,7 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm py-3"
+          ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm py-3"
           : "bg-transparent py-5"
       }`}
     >
@@ -69,7 +70,7 @@ const Navigation = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 8 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="text-lg font-bold tracking-tight text-slate-900"
+              className="text-lg font-bold tracking-tight text-slate-900 dark:text-white"
             >
               {navTexts[textIndex]}
             </motion.div>
@@ -84,39 +85,43 @@ const Navigation = () => {
               href={link.href}
               className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                 pathname === link.href
-                  ? "text-blue-600 bg-blue-50"
-                  : "text-slate-500 hover:text-slate-900 hover:bg-slate-50"
+                  ? "text-blue-600 bg-blue-50 dark:bg-blue-900/30"
+                  : "text-slate-500 hover:text-slate-900 hover:bg-slate-50 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-800"
               }`}
             >
               {link.name}
             </Link>
           ))}
+          <ThemeToggle />
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden relative z-50 p-2 text-slate-900 focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          <div className="w-5 h-4 relative flex flex-col justify-between">
-            <span
-              className={`block h-0.5 w-5 bg-current transform transition-all duration-300 origin-center ${
-                isOpen ? "rotate-45 translate-y-[7px]" : ""
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-5 bg-current transition-opacity duration-300 ${
-                isOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-5 bg-current transform transition-all duration-300 origin-center ${
-                isOpen ? "-rotate-45 -translate-y-[7px]" : ""
-              }`}
-            />
-          </div>
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={toggleMenu}
+            className="relative z-50 p-2 text-slate-900 dark:text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <div className="w-5 h-4 relative flex flex-col justify-between">
+              <span
+                className={`block h-0.5 w-5 bg-current transform transition-all duration-300 origin-center ${
+                  isOpen ? "rotate-45 translate-y-[7px]" : ""
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-5 bg-current transition-opacity duration-300 ${
+                  isOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-5 bg-current transform transition-all duration-300 origin-center ${
+                  isOpen ? "-rotate-45 -translate-y-[7px]" : ""
+                }`}
+              />
+            </div>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -127,7 +132,7 @@ const Navigation = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-white z-40 md:hidden"
+            className="fixed inset-0 bg-white dark:bg-slate-900 z-40 md:hidden"
           >
             <div className="flex flex-col items-center justify-center h-full gap-6">
               {navLinks.map((link, i) => (
@@ -143,7 +148,7 @@ const Navigation = () => {
                     className={`text-2xl font-semibold transition-colors ${
                       pathname === link.href
                         ? "text-blue-600"
-                        : "text-slate-900 hover:text-blue-600"
+                        : "text-slate-900 dark:text-white hover:text-blue-600"
                     }`}
                   >
                     {link.name}

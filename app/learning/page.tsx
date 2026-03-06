@@ -17,28 +17,28 @@ export default function LearningLogPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen bg-white pt-24 pb-24">
+      <main className="min-h-screen bg-white dark:bg-slate-900 pt-24 pb-24">
         <div className="max-w-[900px] mx-auto px-6 md:px-8">
           {/* Header */}
           <AnimateOnScroll>
             <div className="mb-12">
               <Link
                 href="/"
-                className="group inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-blue-600 transition-colors mb-8"
+                className="group inline-flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors mb-8"
               >
                 <span className="transition-transform group-hover:-translate-x-0.5">
                   &larr;
                 </span>
                 Back to Home
               </Link>
-              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
                 Learning Log
               </h1>
-              <p className="text-lg text-slate-500 leading-relaxed">
+              <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
                 A living document of what I&apos;m learning, why it matters, and
                 how I&apos;m applying it.
               </p>
-              <div className="h-px bg-slate-200 mt-10" />
+              <div className="h-px bg-slate-200 dark:bg-slate-700 mt-10" />
             </div>
           </AnimateOnScroll>
 
@@ -46,12 +46,12 @@ export default function LearningLogPage() {
           <div className="space-y-8">
             {entries.map((entry, index) => (
               <AnimateOnScroll key={index} delay={index * 0.1}>
-                <div className="bg-white p-8 rounded-2xl border border-slate-200 border-l-4 border-l-blue-600 hover:border-slate-300 hover:shadow-lg transition-all duration-300">
+                <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 border-l-4 border-l-blue-600 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-lg transition-all duration-300">
                   <div className="mb-5">
                     <span className="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2">
                       Now &rarr;
                     </span>
-                    <h2 className="text-2xl font-bold text-slate-900">
+                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
                       {entry.now}
                     </h2>
                   </div>
@@ -60,17 +60,17 @@ export default function LearningLogPage() {
                     <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">
                       Why &rarr;
                     </span>
-                    <p className="text-base text-slate-500 leading-relaxed">
+                    <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed">
                       {entry.why}
                     </p>
                   </div>
 
-                  <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mt-6 pt-6 border-t border-slate-100">
+                  <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
                     <div>
                       <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">
                         Building &rarr;
                       </span>
-                      <p className="text-base text-slate-700 font-medium">
+                      <p className="text-base text-slate-700 dark:text-slate-300 font-medium">
                         {entry.building}
                       </p>
                     </div>

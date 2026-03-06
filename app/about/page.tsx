@@ -37,14 +37,14 @@ export default function AboutPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen bg-white pt-24 pb-24">
+      <main className="min-h-screen bg-white dark:bg-slate-900 pt-24 pb-24">
         <div className="max-w-[900px] mx-auto px-6 md:px-8">
           {/* Back */}
           <AnimateOnScroll>
             <div className="mb-12">
               <Link
                 href="/"
-                className="group inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-blue-600 transition-colors"
+                className="group inline-flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors"
               >
                 <span className="transition-transform group-hover:-translate-x-0.5">
                   &larr;
@@ -59,7 +59,7 @@ export default function AboutPage() {
             <div className="flex flex-col md:flex-row gap-12 items-start">
               <AnimateOnScroll>
                 <div className="flex-shrink-0 mx-auto md:mx-0">
-                  <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl bg-slate-100 border-2 border-slate-200 overflow-hidden shadow-lg">
+                  <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl bg-slate-100 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 overflow-hidden shadow-lg">
                     <img
                       src="https://res.cloudinary.com/dlrlwy7hg/image/upload/v1769259329/profile_image_uvoruy.png"
                       alt="Yashas Profile"
@@ -75,15 +75,15 @@ export default function AboutPage() {
                     <span className="text-xs font-bold tracking-widest text-blue-600 uppercase">
                       About
                     </span>
-                    <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mt-2">
+                    <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-2">
                       Yashas
                     </h1>
-                    <p className="text-lg text-slate-500 font-medium mt-1">
+                    <p className="text-lg text-slate-500 dark:text-slate-400 font-medium mt-1">
                       Full Stack-First Product Engineer
                     </p>
                   </div>
 
-                  <p className="text-base text-slate-500 leading-relaxed max-w-prose">
+                  <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-prose">
                     I build products from start to finish — from understanding
                     the problem and shaping the solution. I&apos;m most
                     effective when I&apos;m close to the product, not just the
@@ -94,7 +94,7 @@ export default function AboutPage() {
                     href="https://drive.google.com/file/d/1tLJl48DZ0nYmy-Q6HNDs2O2X_nJ9zmmK/view"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-colors text-sm"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white dark:bg-white dark:text-slate-900 rounded-xl font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors text-sm"
                   >
                     Download Resume
                     <svg
@@ -119,7 +119,7 @@ export default function AboutPage() {
           {/* Experience Section */}
           <section>
             <AnimateOnScroll>
-              <h2 className="text-3xl font-bold text-slate-900 mb-2">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
                 Experience
               </h2>
               <p className="text-sm text-slate-400 mb-10">
@@ -130,14 +130,14 @@ export default function AboutPage() {
             <div className="space-y-6">
               {experiences.map((exp, index) => (
                 <AnimateOnScroll key={index} delay={index * 0.1}>
-                  <div className="group bg-white border border-slate-200 rounded-2xl p-7 hover:border-slate-300 hover:shadow-lg transition-all duration-300">
+                  <div className="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-7 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-lg transition-all duration-300">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
                       <div>
                         <div className="flex items-center gap-3 flex-wrap">
-                          <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                          <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">
                             {exp.role}
                           </h3>
-                          <span className="text-xs px-2.5 py-1 rounded-lg bg-blue-50 text-blue-600 font-semibold">
+                          <span className="text-xs px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 font-semibold">
                             {exp.tag}
                           </span>
                         </div>
@@ -155,7 +155,7 @@ export default function AboutPage() {
                       </span>
                     </div>
 
-                    <p className="text-sm text-slate-500 leading-relaxed">
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                       {exp.description}
                     </p>
                   </div>
