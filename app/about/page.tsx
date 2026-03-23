@@ -91,7 +91,7 @@ export default function AboutPage() {
                   </p>
 
                   <a
-                    href="https://drive.google.com/file/d/1tLJl48DZ0nYmy-Q6HNDs2O2X_nJ9zmmK/view"
+                    href="https://drive.google.com/file/d/1i39CCx5NYGoR-Uj560NF__2Xovk3wq-z/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white dark:bg-white dark:text-slate-900 rounded-xl font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors text-sm"

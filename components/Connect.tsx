@@ -44,7 +44,7 @@ const Connect = () => {
               </svg>
             </a>
             <a
-              href="https://drive.google.com/file/d/1tLJl48DZ0nYmy-Q6HNDs2O2X_nJ9zmmK/view"
+              href="https://drive.google.com/file/d/1i39CCx5NYGoR-Uj560NF__2Xovk3wq-z/view?usp=sharing"
               target="_blank"
               className="px-8 py-3.5 bg-transparent text-white border border-slate-600 rounded-xl font-semibold hover:border-slate-400 hover:bg-white/5 transition-all duration-200 w-full sm:w-auto"
             >
